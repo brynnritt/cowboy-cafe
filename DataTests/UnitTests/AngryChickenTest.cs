@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Xunit;
 using CowboyCafe.Data;
-/*
 namespace CowboyCafe.DataTests
 {
     public class AngryChickenTest
@@ -61,4 +60,3 @@ namespace CowboyCafe.DataTests
         }
     }
 }
-*/
