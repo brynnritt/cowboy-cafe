@@ -4,26 +4,26 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class DakotaDoubleBurger
+    public class TexasTripleBurger
     {
         /// <summary>
-        /// Price of the dish
+        /// The price of the entree
         /// </summary>
         public double Price
         {
             get
             {
-                return 5.20;
+                return 6.45;
             }
         }
         /// <summary>
-        /// Number of calories in the dish
+        /// Calories in the entree
         /// </summary>
         public uint Calories
         {
             get
             {
-                return 464;
+                return 698;
             }
         }
 
@@ -59,6 +59,14 @@ namespace CowboyCafe.Data
         /// Boolean for cheese
         /// </summary>
         public bool Cheese { get; set; } = true;
+        /// <summary>
+        /// Boolean for bacon
+        /// </summary>
+        public bool Bacon { get; set; } = true;
+        /// <summary>
+        /// Boolean for egg
+        /// </summary>
+        public bool Egg { get; set; } = true;
 
         /// <summary>
         /// Creates and returns list of special instructions
@@ -76,6 +84,8 @@ namespace CowboyCafe.Data
                 if (!Ketchup) instructions.Add("hold ketchup");
                 if (!Mustard) instructions.Add("hold mustard");
                 if (!Cheese) instructions.Add("hold cheese");
+                if (!Bacon) instructions.Add("hold bacon");
+                if (!Egg) instructions.Add("hold egg");
                 return instructions;
             }
         }

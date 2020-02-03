@@ -22,6 +22,9 @@ namespace CowboyCafe.Data
             get { return 894; }
         }
 
+        /// <summary>
+        /// Creates and returns list of special instructions
+        /// </summary>
         public List<string> SpecialInstructions
         {
             get

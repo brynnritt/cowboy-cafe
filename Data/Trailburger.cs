@@ -4,8 +4,11 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class Trailburger
+    public class TrailBurger
     {
+        /// <summary>
+        /// The price of the entree
+        /// </summary>
         public double Price
         {
             get
@@ -13,7 +16,9 @@ namespace CowboyCafe.Data
                 return 4.50;
             }
         }
-
+        /// <summary>
+        /// The number of calories in the entree
+        /// </summary>
         public uint Calories
         {
             get
@@ -22,13 +27,31 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Boolean for bun
+        /// </summary>
         public bool Bun { get; set; } = true;
+        /// <summary>
+        /// Boolean for pickle
+        /// </summary>
         public bool Pickle { get; set; } = true;
+        /// <summary>
+        /// Boolean for ketchup
+        /// </summary>
         public bool Ketchup { get; set; } = true;
+        /// <summary>
+        /// Boolean for mustard
+        /// </summary>
         public bool Mustard { get; set; } = true;
+        /// <summary>
+        /// Boolean for cheese
+        /// </summary>
         public bool Cheese { get; set; } = true;
 
-        public List<string> SpecialIntructions
+        /// <summary>
+        /// Creates and returns list of special instructions
+        /// </summary>
+        public List<string> SpecialInstructions
         {
             get
             {
