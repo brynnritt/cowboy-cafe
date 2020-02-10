@@ -4,12 +4,12 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class TrailBurger
+    public class TrailBurger : Entree
     {
         /// <summary>
         /// The price of the entree
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -19,7 +19,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The number of calories in the entree
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -51,7 +51,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Creates and returns list of special instructions
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
