@@ -4,6 +4,9 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
+    /// <summary>
+    /// A base class representing an entree
+    /// </summary>
     public abstract class Entree
     {
         /// <summary>

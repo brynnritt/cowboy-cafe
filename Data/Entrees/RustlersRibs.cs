@@ -11,7 +11,7 @@ namespace CowboyCafe.Data
         /// </summary>
         public override double Price
         {
-            get { return 7.5; }
+            get { return 7.50; }
         }
 
         /// <summary>

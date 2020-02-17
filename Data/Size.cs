@@ -4,6 +4,9 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
+    /// <summary>
+    /// List of possible sides
+    /// </summary>
     public enum Size
     {
         Small,
