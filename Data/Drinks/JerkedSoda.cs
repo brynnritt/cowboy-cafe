@@ -61,5 +61,45 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /// <summary>
+        /// To string method
+        /// </summary>
+        /// <returns>Drink as string</returns>
+        public override string ToString()
+        {
+            string s = "";
+            switch (Size)
+            {
+                case Size.Small:
+                    s += "Small ";
+                    break;
+                case Size.Medium:
+                    s += "Medium ";
+                    break;
+                default:
+                    s += "Large ";
+                    break;
+            }
+            switch (Flavor)
+            {
+                case SodaFlavor.BirchBeer:
+                    s += "Birch Beer Jerked Soda";
+                    break;
+                case SodaFlavor.CreamSoda:
+                    s += "Cream Soda Jerked Soda";
+                    break;
+                case SodaFlavor.OrangeSoda:
+                    s += "Orange Soda Jerked Soda";
+                    break;
+                case SodaFlavor.RootBeer:
+                    s += "Root Beer Jerked Soda";
+                    break;
+                case SodaFlavor.Sarsparilla:
+                    s += "Sarsparilla Jerked Soda";
+                    break;
+            }
+            return s;
+        }
     }
 }

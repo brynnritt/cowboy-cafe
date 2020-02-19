@@ -17,18 +17,37 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0">
             <TextBlock TextAlignment="Center">Entree</TextBlock>
-            <Button FontSize="3">Cowpoke Chili</Button>
-            <Button Name="AddTrailBurgerButton">Trail Burger</Button>
-            <Button>Angry Chicken</Button>
+            <Button Name="AddCowpokeChiliButton" FontSize="15">Cowpoke Chili</Button>
+            <Button Click="RustlersRibsButtonClicked" FontSize="15">Rustler's Ribs</Button>
+            <Button Click="PecosPulledPorkButtonClicked" FontSize="15">Pecos Pulled Pork</Button>
+            <Button Click="TrailBurgerButtonClicked" Name="AddTrailBurgerButton" FontSize="15" RenderTransformOrigin="0.483,1.941">Trail Burger</Button>
+            <Button Click="DakotaDoubleBurgerButtonClicked" FontSize="15">Dakota Double Burger</Button>
+            <Button Click="TexasTripleBurgerButtonClicked" FontSize="15">Texas Triple Burger</Button>
+            <Button Click="AngryChickenButtonClicked" FontSize="15">Angry Chicken</Button>
         </StackPanel>
         <StackPanel Grid.Column="1">
             <TextBlock TextAlignment="Center">Side</TextBlock>
-            <Button>Baked Beans</Button>
+            <Button Click="ChiliCheeseFriesButtonClicked" FontSize="15">Chili Cheese Fries</Button>
+            <Button Click="CornDodgersButtonClicked" FontSize="15">Corn Dodgers</Button>
+            <Button Click="PanDeCampoButtonClicked" FontSize="15">Pan De Campo</Button>
+            <Button Click="BakedBeansButtonClicked" FontSize="15">Baked Beans</Button>
+        </StackPanel>
+        <StackPanel Grid.Column="2">
+            <TextBlock TextAlignment="Center">Entree</TextBlock>
+            <Button Click="JerkedSodaButtonClicked" FontSize="15">Jerked Soda</Button>
+            <Button Click="TexasTeaButtonClicked" FontSize="15">Texas Tea</Button>
+            <Button Click="CowboyCoffeeButtonClicked" FontSize="15">Cowboy Coffee</Button>
+            <Button Click="WaterButtonClicked" FontSize="15">Water</Button>
+        </StackPanel>
+        <StackPanel Grid.Column="3">
+            <TextBlock TextAlignment="Center">Order</TextBlock>
+            <ListView Name="OrderListView"></ListView>
+            
         </StackPanel>
         
          
