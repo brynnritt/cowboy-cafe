@@ -70,6 +70,26 @@ namespace CowboyCafe.Data
                 if (Ice) instructions.Add("Add Ice");
                 return instructions;
             }
-        }    
+        }
+
+        /// <summary>
+        /// To string method
+        /// </summary>
+        /// <returns>Drink as string</returns>
+        public override string ToString()
+        {
+            switch (Size)
+            {
+                case Size.Small:
+                    if(Decaf) return "Small Decaf Cowboy Coffee";
+                    return "Small Cowboy Coffee";
+                case Size.Medium:
+                    if (Decaf) return "Medium Decaf Cowboy Coffee";
+                    return "Medium Cowboy Coffee";
+                default:
+                    if (Decaf) return "Large Decaf Cowboy Coffee";
+                    return "Large Cowboy Coffee";
+            }
+        }
     }
 }

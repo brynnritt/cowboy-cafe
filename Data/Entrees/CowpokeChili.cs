@@ -87,6 +87,15 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /// <summary>
+        /// To string method
+        /// </summary>
+        /// <returns>Entree as string</returns>
+        public override string ToString()
+        {
+            return "Cowpoke Chili"; 
+        }
     }
 }
 
