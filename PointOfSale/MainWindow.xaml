@@ -12,7 +12,7 @@
             <ColumnDefinition Width="130*"/>
             <ColumnDefinition Width="479*"/>
         </Grid.ColumnDefinitions>
-        <local:OrderControl Grid.ColumnSpan="3"></local:OrderControl>
-
+        <!--<local:OrderControl Grid.ColumnSpan="2"></local:OrderControl>-->
+        <local:OrderSummaryControl Grid.ColumnSpan="3"></local:OrderSummaryControl>
     </Grid>
 </Window>

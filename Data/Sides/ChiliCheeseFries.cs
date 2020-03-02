@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class ChiliCheeseFries : Side
+    public class ChiliCheeseFries : Side , IOrderItem
     {
         /// <summary>
         /// Price of the side, varying based on size
@@ -44,6 +44,8 @@ namespace CowboyCafe.Data
 
             }
         }
+
+        public List<string> SpecialInstructions => throw new NotImplementedException();
 
         /// <summary>
         /// To string method

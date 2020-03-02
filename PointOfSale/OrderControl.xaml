@@ -44,11 +44,12 @@
             <Button Click="CowboyCoffeeButtonClicked" FontSize="15">Cowboy Coffee</Button>
             <Button Click="WaterButtonClicked" FontSize="15">Water</Button>
         </StackPanel>
-        <StackPanel Grid.Column="3">
+        <!--<StackPanel Grid.Column="3">
             <TextBlock TextAlignment="Center">Order</TextBlock>
             <ListView Name="OrderListView"></ListView>
             
         </StackPanel>
+        -->
         
          
     </Grid>
