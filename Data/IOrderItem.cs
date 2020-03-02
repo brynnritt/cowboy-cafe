@@ -5,12 +5,18 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// A base class representing a side
+    /// Order Interface
     /// </summary>
     public interface IOrderItem
     {
-        public double Price { get; set; }
+        /// <summary>
+        /// Price of item
+        /// </summary>
+        double Price { get; }
 
-        public List<string> SpecialIntructions { get; set; }
+        /// <summary>
+        /// List of special intsructions
+        /// </summary>
+        List<string> SpecialInstructions { get; }
     }
 }
