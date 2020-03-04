@@ -45,7 +45,17 @@ namespace CowboyCafe.Data
             }
         }
 
-        public List<string> SpecialInstructions => throw new NotImplementedException();
+        /// <summary>
+        /// List of special instructions
+        /// </summary>
+        public List<string> SpecialInstructions
+        {
+            get
+            {
+                List<string> instructions = new List<string>();
+                return instructions;
+            }
+        }
 
         /// <summary>
         /// To string method

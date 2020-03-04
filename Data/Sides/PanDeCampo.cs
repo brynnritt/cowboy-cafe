@@ -1,6 +1,8 @@
-﻿namespace CowboyCafe.Data
+﻿using System.Collections.Generic;
+
+namespace CowboyCafe.Data
 {
-    public class PanDeCampo : Side
+    public class PanDeCampo : Side, IOrderItem
     {
         /// <summary>
         /// Price of the side, which varies based on size
@@ -38,6 +40,18 @@
                         return 367;
                 }
 
+            }
+        }
+
+        /// <summary>
+        /// List of special instructions
+        /// </summary>
+        public List<string> SpecialInstructions
+        {
+            get
+            {
+                List<string> instructions = new List<string>();
+                return instructions;
             }
         }
 

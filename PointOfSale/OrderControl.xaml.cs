@@ -22,161 +22,36 @@ namespace PointOfSale
         public OrderControl()
         {
             InitializeComponent();
-
-            //AddTrailBurgerButton.Height = 90;
-            AddCowpokeChiliButton.Click += CowPokeChiliButtonClicked;
         }
 
         /// <summary>
-        /// Event handler for CowPokeChili Button
+        /// Button to select an item
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void CowPokeChiliButtonClicked(object sender, RoutedEventArgs e)
+        void ItemSelectionButton(object sender, RoutedEventArgs e)
         {
-            if(DataContext is Order order)
-                order.Add(new CowpokeChili());
-
+            
         }
-
         /// <summary>
-        /// Event handler for RustlersRibs Button
+        /// Event handler for button that cancels the order
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void RustlersRibsButtonClicked(object sender, RoutedEventArgs e)
+        void CancelOrderButton(object sender, RoutedEventArgs e)
         {
-            if(DataContext is Order order) order.Add(new RustlersRibs());
+            this.DataContext = new Order();
+            
         }
-
         /// <summary>
-        /// Event handler for Pescos Pulled Pork button
+        /// Event handler for button that completes the order
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void PecosPulledPorkButtonClicked(object sender, RoutedEventArgs e)
+        void CompleteOrderButton(object sender, RoutedEventArgs e)
         {
-            if (DataContext is Order order) order.Add(new PecosPulledPork());
-        }
-
-        /// <summary>
-        /// Event handler for Trail Burger button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void TrailBurgerButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order order) order.Add(new TrailBurger());
-        }
-
-        /// <summary>
-        /// Event handler for Dakota Double Burger button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void DakotaDoubleBurgerButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order order) order.Add(new DakotaDoubleBurger());
-        }
-
-        /// <summary>
-        /// Event handler for Texas Triple button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void TexasTripleBurgerButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order order) order.Add(new TexasTripleBurger());
-        }
-
-        /// <summary>
-        /// Event handler for Angry Chicken button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void AngryChickenButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order order) order.Add(new AngryChicken());
-        }
-
-        /// <summary>
-        /// Event handler for Chili Cheese Fries button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void ChiliCheeseFriesButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order order) order.Add(new ChiliCheeseFries());
-        }
-
-        /// <summary>
-        /// Event handler for Corn Dodgers button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void CornDodgersButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order order) order.Add(new CornDodgers());
-        }
-
-        /// <summary>
-        /// Event handler for Pan de campo button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void PanDeCampoButtonClicked(object sender, RoutedEventArgs e)
-        {
-            OrderListView.Items.Add(new PanDeCampo());
-        }
-
-        /// <summary>
-        /// Event handler for Baked beans button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void BakedBeansButtonClicked(object sender, RoutedEventArgs e)
-        {
-            OrderListView.Items.Add(new BakedBeans());
-        }
-
-        /// <summary>
-        /// Event handler for Jerked Soda button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void JerkedSodaButtonClicked(object sender, RoutedEventArgs e)
-        {
-            OrderListView.Items.Add(new JerkedSoda());
-        }
-
-        /// <summary>
-        /// Event handler for Texas tea button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void TexasTeaButtonClicked(object sender, RoutedEventArgs e)
-        {
-            OrderListView.Items.Add(new TexasTea());
-        }
-
-        /// <summary>
-        /// Event handler for Cowboy Coffee button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void CowboyCoffeeButtonClicked(object sender, RoutedEventArgs e)
-        {
-            OrderListView.Items.Add(new CowboyCoffee());
-        }
-
-        /// <summary>
-        /// Event handler for water button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void WaterButtonClicked(object sender, RoutedEventArgs e)
-        {
-            OrderListView.Items.Add(new Water());
+            this.DataContext = new Order();
+            
         }
     }
 }

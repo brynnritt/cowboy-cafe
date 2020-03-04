@@ -9,48 +9,25 @@
     <UserControl.Resources>
         <Style TargetType="Button">
             <Setter Property="Height" Value="50px"/>
+            <Setter Property="Width" Value="200px"/>
             <Setter Property="FontSize" Value="18px"/>
 
         </Style>
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="3*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0">
-            <TextBlock TextAlignment="Center">Entree</TextBlock>
-            <Button Name="AddCowpokeChiliButton" FontSize="15">Cowpoke Chili</Button>
-            <Button Click="RustlersRibsButtonClicked" FontSize="15">Rustler's Ribs</Button>
-            <Button Click="PecosPulledPorkButtonClicked" FontSize="15">Pecos Pulled Pork</Button>
-            <Button Click="TrailBurgerButtonClicked" Name="AddTrailBurgerButton" FontSize="15" RenderTransformOrigin="0.483,1.941">Trail Burger</Button>
-            <Button Click="DakotaDoubleBurgerButtonClicked" FontSize="15">Dakota Double Burger</Button>
-            <Button Click="TexasTripleBurgerButtonClicked" FontSize="15">Texas Triple Burger</Button>
-            <Button Click="AngryChickenButtonClicked" FontSize="15">Angry Chicken</Button>
-        </StackPanel>
-        <StackPanel Grid.Column="1">
-            <TextBlock TextAlignment="Center">Side</TextBlock>
-            <Button Click="ChiliCheeseFriesButtonClicked" FontSize="15">Chili Cheese Fries</Button>
-            <Button Click="CornDodgersButtonClicked" FontSize="15">Corn Dodgers</Button>
-            <Button Click="PanDeCampoButtonClicked" FontSize="15">Pan De Campo</Button>
-            <Button Click="BakedBeansButtonClicked" FontSize="15">Baked Beans</Button>
-        </StackPanel>
-        <StackPanel Grid.Column="2">
-            <TextBlock TextAlignment="Center">Entree</TextBlock>
-            <Button Click="JerkedSodaButtonClicked" FontSize="15">Jerked Soda</Button>
-            <Button Click="TexasTeaButtonClicked" FontSize="15">Texas Tea</Button>
-            <Button Click="CowboyCoffeeButtonClicked" FontSize="15">Cowboy Coffee</Button>
-            <Button Click="WaterButtonClicked" FontSize="15">Water</Button>
-        </StackPanel>
-        <!--<StackPanel Grid.Column="3">
-            <TextBlock TextAlignment="Center">Order</TextBlock>
-            <ListView Name="OrderListView"></ListView>
-            
-        </StackPanel>
-        -->
-        
-         
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <local:OrderSummaryControl Grid.Column="1" Grid.RowSpan = "2"></local:OrderSummaryControl>
+        <local:MenuItemSelectionControl Grid.Column="0" Grid.Row="1"></local:MenuItemSelectionControl>
+        <Button Click="ItemSelectionButton" FontSize="15" Margin="0,12,400,13">Item Selection</Button>
+        <Button Click="CompleteOrderButton" FontSize="15">Complete Order</Button>
+        <Button Click="CancelOrderButton" FontSize="15" Margin="400,12,0,13" >Cancel Order</Button>
+
     </Grid>
 </UserControl>

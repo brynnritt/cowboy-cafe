@@ -7,10 +7,11 @@ using System.Linq;
 
 namespace CowboyCafe.DataTests
 {
-    class MockOrderItem : IOrderItem
+    public class MockOrderItem : IOrderItem
     {
         public double Price { get; set; }
-        public List<string> SpecialIntructions { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public List<string> SpecialInstructions => throw new NotImplementedException();
     }
     public class OrderTests
     {
@@ -54,7 +55,7 @@ namespace CowboyCafe.DataTests
                     Price = price
                 });
             }
-            Assert.Equal(total, order.Subtotal);
+            Assert.Equal(total, order.GetSubtotal());
         }
         [Fact]
         public void ItemsShouldContainOnlyAddedItems(MockOrderItem[] item)

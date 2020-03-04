@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class BakedBeans : Side
+    public class BakedBeans : Side, IOrderItem
     {
         /// <summary>
         /// Price of the side, varying based on size
@@ -45,6 +45,18 @@ namespace CowboyCafe.Data
 
             }
 
+        }
+
+        /// <summary>
+        /// List of special instructions
+        /// </summary>
+        public List<string> SpecialInstructions
+        {
+            get
+            {
+                List<string> instructions = new List<string>();
+                return instructions;
+            }
         }
 
         /// <summary>
