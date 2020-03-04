@@ -24,6 +24,11 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+
+        public void SwapScreen(UIElement element)
+        {
+            Container.Child = element;
+        }
         /// <summary>
         /// Button to select an item
         /// </summary>

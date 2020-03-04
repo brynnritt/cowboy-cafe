@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
+using Extention;
 
 namespace PointOfSale
 {
@@ -19,14 +20,45 @@ namespace PointOfSale
     /// </summary>
     public partial class MenuItemSelectionControl : UserControl
     {
+        private OrderControl OrderControl;
         /// <summary>
         /// Constructor
         /// </summary>
         public MenuItemSelectionControl()
         {
             InitializeComponent();
+            
         }
 
+        public void OnItemAddButtonClicked(object sender, RoutedEventArgs e)
+        {
+            var orderControl = this.FindAncestor<OrderControl>();
+            if(DataContext is Order order)
+            {
+                if(sender is Button button)
+                {
+                    switch (button.Tag)
+                    {
+                        case "CowpokeChili":
+                            var cowpokeEntree = new CowpokeChili();
+                            var screen = new CustomizeEntree("Cowpoke Chili");
+                            screen.DataContext = cowpokeEntree;
+                            order.Add(cowpokeEntree);
+                            orderControl.SwapScreen(screen);
+                            break;
+                        case "RustlersRibs":
+                            var rustlersEntree = new RustlersRibs();
+                            screen = new CustomizeEntree("Rustlers Ribs");
+                            screen.DataContext = rustlersEntree;
+                            order.Add(rustlersEntree);
+                            orderControl.SwapScreen(screen);
+                            break;
+
+                    }
+                }
+            }
+        }
+        /*
         /// <summary>
         /// Event handler for CowPokeChili Button
         /// </summary>
@@ -38,7 +70,7 @@ namespace PointOfSale
                 order.Add(new CowpokeChili());
 
         }
-
+        */
         /// <summary>
         /// Event handler for RustlersRibs Button
         /// </summary>

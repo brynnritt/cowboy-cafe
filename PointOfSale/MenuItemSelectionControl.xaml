@@ -22,13 +22,13 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0">
             <TextBlock TextAlignment="Center">Entree</TextBlock>
-            <Button Click="CowPokeChiliButtonClicked" FontSize="15">Cowpoke Chili</Button>
-            <Button Click="RustlersRibsButtonClicked" FontSize="15">Rustler's Ribs</Button>
-            <Button Click="PecosPulledPorkButtonClicked" FontSize="15">Pecos Pulled Pork</Button>
-            <Button Click="TrailBurgerButtonClicked" Name="AddTrailBurgerButton" FontSize="15" RenderTransformOrigin="0.483,1.941">Trail Burger</Button>
-            <Button Click="DakotaDoubleBurgerButtonClicked" FontSize="15">Dakota Double Burger</Button>
-            <Button Click="TexasTripleBurgerButtonClicked" FontSize="15">Texas Triple Burger</Button>
-            <Button Click="AngryChickenButtonClicked" FontSize="15">Angry Chicken</Button>
+            <Button Click="OnItemAddButtonClicked" Tag="CowpokeChili" FontSize="15">Cowpoke Chili</Button>
+            <Button Click="RustlersRibsButtonClicked" Tag="Rustler's Ribs" FontSize="15">Rustler's Ribs</Button>
+            <Button Click="PecosPulledPorkButtonClicked" Tag="Pulled Pork" FontSize="15">Pecos Pulled Pork</Button>
+            <Button Click="TrailBurgerButtonClicked" Tag="Trail Burger" Name="AddTrailBurgerButton" FontSize="15" RenderTransformOrigin="0.483,1.941">Trail Burger</Button>
+            <Button Click="DakotaDoubleBurgerButtonClicked" Tag="Dakota Double Burger" FontSize="15">Dakota Double Burger</Button>
+            <Button Click="TexasTripleBurgerButtonClicked" Tag="Texas Triple Burger" FontSize="15">Texas Triple Burger</Button>
+            <Button Click="AngryChickenButtonClicked" Tag="Angry Chicken" FontSize="15">Angry Chicken</Button>
         </StackPanel>
         <StackPanel Grid.Column="1">
             <TextBlock TextAlignment="Center">Side</TextBlock>
