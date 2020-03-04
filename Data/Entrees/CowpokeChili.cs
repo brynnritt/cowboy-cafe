@@ -41,6 +41,9 @@ namespace CowboyCafe.Data
             set { greenOnions = value; }
         }
 
+        /// <summary>
+        /// Bool for tortilla strips
+        /// </summary>
         private bool tortillaStrips = true;
         /// <summary>
         /// If the chili is topped with tortilla strips
