@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="PointOfSale.CustomizeDrink"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <StackPanel>
+            <StackPanel>
+                <StackPanel>
+                    <TextBlock Text="Customize Cowboy Coffee" Name="CowboyCoffee" Visibility="Hidden"/>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock Text="Customize Jerked Soda" Name="JerkedSoda" Visibility="Hidden"/>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock Text="Customize Texas Tea" Name="TexasTea" Visibility="Hidden"/>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock Text="Customize Water" Name="Water" Visibility="Hidden"/>
+                </StackPanel>
+                <StackPanel>
+                    <RadioButton Content="Small" Tag="Small" Checked="Size_Checked"/>
+                    <RadioButton Content="Medium" Tag="Medium" Checked="Size_Checked"/>
+                    <RadioButton Content="Large" Tag="Large" Checked="Size_Checked"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label x:Name="CC_Decaf" Visibility="Hidden" Content="Decaf"/>
+                    <CheckBox x:Name="CC_DecafCheck" Visibility="Hidden" IsChecked="{Binding Path=Decaf}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label x:Name="CC_RoomforCream" Visibility="Hidden" Content="Room for Cream"/>
+                    <CheckBox x:Name="CC_RoomforCreamCheck" Visibility="Hidden" IsChecked="{Binding Path=RoomforCream}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label x:Name="CC_Ice" Visibility="Hidden" Content="Ice"/>
+                    <CheckBox x:Name="CC_IceCheck" Visibility="Hidden" IsChecked="{Binding Path=Ice}"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton Content="BirchBeer" Visibility="Hidden" Name="BirchBeer"  Tag="BirchBeer" Checked="Flavor_Checked"/>
+                    <RadioButton Content="CreamSoda" Visibility="Hidden" Tag="CreamSoda" Checked="Flavor_Checked"/>
+                    <RadioButton Content="OrangeSoda" Visibility="Hidden" Tag="OrangeSoda" Checked="Flavor_Checked"/>
+                    <RadioButton Content="RootBeer" Visibility="Hidden" Tag="RootBeer" Checked="Flavor_Checked"/>
+                    <RadioButton Content="Sarsparilla" Visibility="Hidden" Tag="Sarsparilla" Checked="Flavor_Checked"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label x:Name="JS_Ice" Visibility="Hidden" Content="Ice"/>
+                    <CheckBox x:Name="JS_IceCheck" Visibility="Hidden" IsChecked="{Binding Path=Ice}"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="TT_Sweet" Visibility="Hidden" Content="Sweet"/>
+                <CheckBox x:Name="TT_SweetCheck" Visibility="Hidden" IsChecked="{Binding Path=Sweet}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="TT_Ice" Visibility="Hidden" Content="Room for Cream"/>
+                <CheckBox x:Name="TT_IceCheck" Visibility="Hidden" IsChecked="{Binding Path=RoomforCream}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="Lemon" Visibility="Hidden" Content="Lemon"/>
+                <CheckBox x:Name="Lemon_Check" Visibility="Hidden" IsChecked="{Binding Path=Lemon}"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

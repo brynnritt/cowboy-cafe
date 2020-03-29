@@ -27,10 +27,12 @@
         <Border x:Name="Container" Grid.Column="0" Grid.Row="1">
             <local:MenuItemSelectionControl Grid.Column="0" Grid.Row="1"></local:MenuItemSelectionControl>
         </Border>
-        
-        <Button Click="ItemSelectionButton" FontSize="15" Margin="0,13,400,12">Item Selection</Button>
-        <Button Click="CompleteOrderButton" FontSize="15">Complete Order</Button>
-        <Button Click="CancelOrderButton" FontSize="15" Margin="400,13,0,12" >Cancel Order</Button>
-
+        <StackPanel Orientation="Horizontal">
+        <Button 
+            Click="ItemSelectionButton" FontSize="20" 
+            Content="Item Selection" HorizontalAlignment="Right" Height="75"/>
+        <Button Click="CompleteOrderButton" FontSize="20" Height="75">Complete Order</Button>
+            <Button Click="CancelOrderButton" FontSize="20" Height="75" >Cancel Order</Button>
+        </StackPanel>
     </Grid>
 </UserControl>

@@ -24,7 +24,7 @@ namespace PointOfSale
             InitializeComponent();
         }
 
-
+        Border screen = new Border();
         public void SwapScreen(UIElement element)
         {
             Container.Child = element;
@@ -36,7 +36,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         void ItemSelectionButton(object sender, RoutedEventArgs e)
         {
-            
+            Container.Child = new MenuItemSelectionControl();
         }
         /// <summary>
         /// Event handler for button that cancels the order

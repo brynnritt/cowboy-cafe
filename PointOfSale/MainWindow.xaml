@@ -14,7 +14,7 @@
             <ColumnDefinition Width="479*"/>
         </Grid.ColumnDefinitions>
         -->
-        <local:OrderControl></local:OrderControl>
+        <local:OrderControl/>
 
     </Grid>
 </Window>

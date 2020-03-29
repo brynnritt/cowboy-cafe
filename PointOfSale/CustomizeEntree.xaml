@@ -2,18 +2,165 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
     <Grid>
+
         <StackPanel>
-            <TextBlock FontSize="30" Name="CowpokeChili" Visibility="Hidden" Text="Customize Cowpoke Chili"/>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <Label Name="CCGreenOnions" Visibility="Hidden">Green Onions</Label>
-            <CheckBox Visibility="Hidden" IsChecked="{Binding Path=GreenOnions}"/>
+            <TextBlock FontSize="20" Name="CowpokeChili" Visibility="Hidden" Text="Customize Cowpoke Chili"/>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="CCGreenOnions" Visibility="Hidden" Content="Green Onions"/>
+                <CheckBox x:Name="CCGreenOnionsCheck" Visibility="Hidden" IsChecked="{Binding Path=GreenOnions}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="CCCheese" Visibility="Hidden" Content="Cheese"/>
+                <CheckBox x:Name="CCCheeseCheck" Visibility="Hidden" IsChecked="{Binding Path=Cheese}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="CCSourCream" Visibility="Hidden" Content="Sour Cream"/>
+                <CheckBox x:Name="CCSourCreamCheck" Visibility="Hidden" IsChecked="{Binding Path=SourCream}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="CCTortillaStrips" Visibility="Hidden" Content="Tortilla Strips"/>
+                <CheckBox x:Name="CCTortillaStripsCheck" Visibility="Hidden" IsChecked="{Binding Path=TortillaStrips}"/>
+            </StackPanel>
         </StackPanel>
         
+        <StackPanel >
+            <TextBlock FontSize="20" Name="AngryChicken" Visibility="Hidden" Text="Customize Angry Chicken"/>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="ACBread" Visibility="Hidden" Content="Bread"/>
+                <CheckBox x:Name="ACBreadCheck" Visibility="Hidden" IsChecked="{Binding Path=Bread}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="ACPickle" Visibility="Hidden" Content="Pickle"/>
+                <CheckBox x:Name="ACPickleCheck" Visibility="Hidden" IsChecked="{Binding Path=Pickle}"/>
+            </StackPanel>
+        </StackPanel>
+        
+        <StackPanel>
+            <TextBlock FontSize="20" Name="TexasTriple" Visibility="Hidden" Text="Customize Texas Triple Burger"/>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="TTTomato" Visibility="Hidden" Content="Tomato"/>
+                <CheckBox x:Name="TTTomatoCheck" Visibility="Hidden" IsChecked="{Binding Path=Tomato}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="TTLettuce" Visibility="Hidden" Content="Lettuce"/>
+                <CheckBox x:Name="TTLettuceCheck" Visibility="Hidden" IsChecked="{Binding Path=Lettuce}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="TTMayo" Visibility="Hidden" Content="Mayo"/>
+                <CheckBox x:Name="TTMayoCheck" Visibility="Hidden" IsChecked="{Binding Path=Mayo}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="TTBun" Visibility="Hidden" Content="Bun"/>
+                <CheckBox x:Name="TTBunCheck" Visibility="Hidden" IsChecked="{Binding Path=Bun}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="TTPickle" Visibility="Hidden" Content="Pickle"/>
+                <CheckBox x:Name="TTPickleCheck" Visibility="Hidden" IsChecked="{Binding Path=Pickle}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="TTKetchup" Visibility="Hidden" Content="Ketchup"/>
+                <CheckBox x:Name="TTKetchupCheck" Visibility="Hidden" IsChecked="{Binding Path=Ketchup}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="TTMustard" Visibility="Hidden" Content="Mustard"/>
+                <CheckBox x:Name="TTMustardCheck" Visibility="Hidden" IsChecked="{Binding Path=Mustard}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="TTCheese" Visibility="Hidden" Content="Cheese"/>
+                <CheckBox x:Name="TTCheeseCheck" Visibility="Hidden" IsChecked="{Binding Path=Cheese}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="TTBacon" Visibility="Hidden" Content="Bacon"/>
+                <CheckBox x:Name="TTBaconCheck" Visibility="Hidden" IsChecked="{Binding Path=Bacon}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="TTEgg" Visibility="Hidden" Content="Egg"/>
+                <CheckBox x:Name="TTEggCheck" Visibility="Hidden" IsChecked="{Binding Path=Egg}"/>
+            </StackPanel>
+        </StackPanel>
+        
+        <StackPanel>
+            <TextBlock FontSize="20" Name="PecosPulledPork" Visibility="Hidden" Text="Customize Pecos Pulled Pork"/>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="PPBread" Visibility="Hidden" Content="Bread"/>
+                <CheckBox x:Name="PPBreadCheck" Visibility="Hidden" IsChecked="{Binding Path=Bread}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="PPPickle" Visibility="Hidden" Content="Pickle"/>
+                <CheckBox x:Name="PPPickleCheck" Visibility="Hidden" IsChecked="{Binding Path=Pickle}"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock FontSize="20" Name="DakotaDoubleBurger" Visibility="Hidden" Text="Customize Dakota Double Burger"/>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="DDTomato" Visibility="Hidden" Content="Tomato"/>
+                <CheckBox x:Name="DDTomatoCheck" Visibility="Hidden" IsChecked="{Binding Path=Tomato}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="DDLettuce" Visibility="Hidden" Content="Lettuce"/>
+                <CheckBox x:Name="DDLettuceCheck" Visibility="Hidden" IsChecked="{Binding Path=Lettuce}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="DDMayo" Visibility="Hidden" Content="Mayo"/>
+                <CheckBox x:Name="DDMayoCheck" Visibility="Hidden" IsChecked="{Binding Path=Mayo}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="DDBun" Visibility="Hidden" Content="Bun"/>
+                <CheckBox x:Name="DDBunCheck" Visibility="Hidden" IsChecked="{Binding Path=Bun}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="DDPickle" Visibility="Hidden" Content="Pickle"/>
+                <CheckBox x:Name="DDPickleCheck" Visibility="Hidden" IsChecked="{Binding Path=Pickle}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="DDKetchup" Visibility="Hidden" Content="Ketchup"/>
+                <CheckBox x:Name="DDKetchupCheck" Visibility="Hidden" IsChecked="{Binding Path=Ketchup}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="DDMustard" Visibility="Hidden" Content="Mustard"/>
+                <CheckBox x:Name="DDMustardCheck" Visibility="Hidden" IsChecked="{Binding Path=Mustard}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="DDCheese" Visibility="Hidden" Content="Cheese"/>
+                <CheckBox x:Name="DDCheeseCheck" Visibility="Hidden" IsChecked="{Binding Path=Cheese}"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel>
+            <TextBlock FontSize="20" Name="RustlersRibs" Visibility="Hidden" Text="Customize Rustler's Ribs"/>
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock FontSize="20" Name="TrailBurger" Visibility="Hidden" Text="Customize Trail Burger"/>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="TBBun" Visibility="Hidden" Content="Bun"/>
+                <CheckBox x:Name="TBBunCheck" Visibility="Hidden" IsChecked="{Binding Path=Bun}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="TBPickle" Visibility="Hidden" Content="Pickle"/>
+                <CheckBox x:Name="TBPickleCheck" Visibility="Hidden" IsChecked="{Binding Path=Pickle}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="TBKetchup" Visibility="Hidden" Content="Ketchup"/>
+                <CheckBox x:Name="TBKetchupCheck" Visibility="Hidden" IsChecked="{Binding Path=Ketchup}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="TBMustard" Visibility="Hidden" Content="Mustard"/>
+                <CheckBox x:Name="TBMustardCheck" Visibility="Hidden" IsChecked="{Binding Path=Mustard}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="TBCheese" Visibility="Hidden" Content="Cheese"/>
+                <CheckBox x:Name="TBCheeseCheck" Visibility="Hidden" IsChecked="{Binding Path=Cheese}"/>
+            </StackPanel>
+        </StackPanel>
+
+
     </Grid>
 </UserControl>
