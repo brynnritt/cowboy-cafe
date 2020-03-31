@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using Xunit;
 using CowboyCafe.Data;
-namespace CowboyCafe.DataTests
+using System.ComponentModel;
+
+namespace CowboyCafe.DataTest
 {
     public class AngryChickenTest
     {
@@ -39,6 +41,15 @@ namespace CowboyCafe.DataTests
         }
 
         [Fact]
+        public void ChangingBreadPropertyShouldInvokePropertyChangedForBread()
+        {
+            var chicken = new AngryChicken();
+            Assert.PropertyChanged(chicken, "Bread", () => {
+                chicken.Bread = false;
+            });
+        }
+
+        [Fact]
         public void HoldingPickleShouldAddSpecialInstruction()
         {
             var chicken = new AngryChicken();
@@ -46,6 +57,15 @@ namespace CowboyCafe.DataTests
             Assert.Collection(chicken.SpecialInstructions, instruction =>
             {
                 Assert.Equal("hold pickle", instruction);
+            });
+        }
+
+        [Fact]
+        public void ChangingPicklePropertyShouldInvokePropertyChangedForPickle()
+        {
+            var chicken = new AngryChicken();
+            Assert.PropertyChanged(chicken, "Pickle", () => {
+                chicken.Pickle = false;
             });
         }
 
@@ -58,5 +78,15 @@ namespace CowboyCafe.DataTests
             Assert.Contains("hold pickle", chicken.SpecialInstructions);
             Assert.Contains("hold bread", chicken.SpecialInstructions);
         }
+
+        [Fact]
+        public void AngryChickenImplementsINotifyPropertyChanged()
+        {
+            var chicken = new AngryChicken();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(chicken);
+        }
+
+
     }
 }
+

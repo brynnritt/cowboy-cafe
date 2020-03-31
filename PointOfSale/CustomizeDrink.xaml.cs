@@ -24,29 +24,28 @@ namespace PointOfSale
         Order order;
         JerkedSoda js;
 
-        public CustomizeDrink(string buttonName, Drink ObjectName, Order Order)
+        public CustomizeDrink(string buttonName, object ObjectName, object Order)
         {
             InitializeComponent();
             DrinkSwitch(buttonName);
-            drink = ObjectName;
-            order = Order;
-            //js = (JerkedSoda)ObjectName;
+            drink = (Drink)ObjectName;
+            order = (Order)Order;
         }
 
         public void DrinkSwitch(string buttonName)
         {
             switch (buttonName)
             {
-                case "CowboyCoffee":
+                case "Cowboy Coffee":
                     DisplayCowboyCoffee();
                     break;
-                case "TexasTea":
+                case "Texas Tea":
                     DisplayTexasTea();
                     break;
                 case "Water":
                     DisplayWater();
                     break;
-                case "JerkedSoda":
+                case "Jerked Soda":
                     DisplayJerkedSoda();
                     break;
             }
@@ -62,8 +61,6 @@ namespace PointOfSale
             CC_Ice.Visibility = Visibility.Visible;
             CC_IceCheck.Visibility = Visibility.Visible;
         }
-
-
 
         public void DisplayTexasTea()
         {

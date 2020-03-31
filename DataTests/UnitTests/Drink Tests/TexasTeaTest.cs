@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -126,5 +127,13 @@ namespace CowboyCafe.DataTests
             if (ice && lemon || !ice && !lemon) Assert.Single(tea.SpecialInstructions);
             if (!ice && lemon) Assert.Equal(2, tea.SpecialInstructions.Count);
         }
+
+        [Fact]
+        public void TexasTeaImplementsINotifyPropertyChanged()
+        {
+            var tea = new TexasTea();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(tea);
+        }
+        
     }
 }

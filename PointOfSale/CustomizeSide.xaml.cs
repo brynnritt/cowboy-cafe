@@ -26,10 +26,10 @@ namespace PointOfSale
     {
         Side side;
         Order order;
-        public CustomizeSide(Side ObjectName, Object Order)
+        public CustomizeSide(object ObjectName, object Order)
         {
             InitializeComponent();
-            side = ObjectName;
+            side = (Side)ObjectName;
             order = (Order)Order;
         }
 

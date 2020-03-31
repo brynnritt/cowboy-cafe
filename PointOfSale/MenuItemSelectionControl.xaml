@@ -38,7 +38,7 @@
             <Button Click="OnAddSideButtonClicked" Tag="BakedBeans" FontSize="15">Baked Beans</Button>
         </StackPanel>
         <StackPanel Grid.Column="2">
-            <TextBlock TextAlignment="Center">Entree</TextBlock>
+            <TextBlock TextAlignment="Center">Drink</TextBlock>
             <Button Click="OnAddDrinkButtonClicked" Tag="JerkedSoda" FontSize="15">Jerked Soda</Button>
             <Button Click="OnAddDrinkButtonClicked" Tag="TexasTea" FontSize="15">Texas Tea</Button>
             <Button Click="OnAddDrinkButtonClicked" Tag="CowboyCoffee" FontSize="15">Cowboy Coffee</Button>

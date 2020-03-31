@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -27,6 +28,13 @@ namespace CowboyCafe.DataTests
         {
             var ribs = new RustlersRibs();
             Assert.Empty(ribs.SpecialInstructions);
+        }
+
+        [Fact]
+        public void RustlersRibsImplementsINotifyPropertyChanged()
+        {
+            var ribs = new RustlersRibs();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(ribs);
         }
     }
 }

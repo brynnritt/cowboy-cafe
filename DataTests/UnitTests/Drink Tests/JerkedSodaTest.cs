@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -59,6 +60,16 @@ namespace CowboyCafe.DataTests
             soda.Ice = true;
             Assert.True(soda.Ice);
         }
+        /*
+        [Fact]
+        public void ChangingIcePropertyShouldInvokePropertyChangedForIce()
+        {
+            var soda = new JerkedSoda();
+            Assert.PropertyChanged(soda, "Ice", () => {
+                soda.Ice = false;
+            });
+        }
+        */
 
         [Fact]
         public void ShouldBeSmallByDefault()
@@ -116,6 +127,13 @@ namespace CowboyCafe.DataTests
             };
             if (!ice) Assert.Collection(soda.SpecialInstructions, item => Assert.Equal("Hold Ice", item));
             if (ice) Assert.Empty(soda.SpecialInstructions);
+        }
+
+        [Fact]
+        public void JerkedSodaImplementsINotifyPropertyChanged()
+        {
+            var soda = new JerkedSoda();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(soda);
         }
     }
 }

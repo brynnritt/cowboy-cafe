@@ -27,21 +27,25 @@
                 <TextBlock Grid.Column= "1" Text="{Binding Path=OrderNumber}"></TextBlock>
                 <TextBlock Grid.Column="0">OrderNumber</TextBlock>
             </Grid>
-            
-            <ListBox ItemsSource="{Binding Path=Items}">
+            <ListBox ItemsSource="{Binding Items}" SelectionChanged="ListBox_SelectionChanged">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
                             <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="4*"/>
                                 <ColumnDefinition/>
-                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Text="{Binding}"/>
-                            <TextBlock Grid.Column="1" Text="{Binding Path=Price, StringFormat=c}"/>
-
+                            <TextBlock x:Name="Item" FontSize="17" Text="{Binding}"/>
+                            <TextBlock FontSize="17" Grid.Column="1" Text="{Binding Price, StringFormat=c}"/>
+                            <Button 
+                                Grid.Column="2" HorizontalAlignment="Right" 
+                                HorizontalContentAlignment="Center" Height="20" 
+                                Width="20" Content="X" Click="DeleteItem_Click" Tag="{Binding}"/>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
+                
             </ListBox>
         </StackPanel>
     </Grid>

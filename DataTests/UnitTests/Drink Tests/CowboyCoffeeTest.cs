@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -59,7 +60,16 @@ namespace CowboyCafe.DataTests
             coffee.RoomForCream = false;
             Assert.False(coffee.RoomForCream);
         }
-
+        /*
+        [Fact]
+        public void ChangingRoomForCreamPropertyShouldInvokePropertyChangedForRoomForCream()
+        {
+            var coffee = new CowboyCoffee();
+            Assert.PropertyChanged(coffee, "RoomForCream", () => {
+                coffee.RoomForCream = true;
+            });
+        }
+        */
         [Fact]
         public void ShouldBeSmallByDefault()
         {
@@ -122,6 +132,13 @@ namespace CowboyCafe.DataTests
             if (!ice && !roomForCream) Assert.Empty(coffee.SpecialInstructions);
             if (ice && !roomForCream || !ice && roomForCream) Assert.Single(coffee.SpecialInstructions);
             if (ice && roomForCream) Assert.Equal(2, coffee.SpecialInstructions.Count);
+        }
+
+        [Fact]
+        public void CowpokeCoffeeImplementsINotifyPropertyChanged()
+        {
+            var coffee = new CowboyCoffee();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(coffee);
         }
     }
 }

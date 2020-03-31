@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -40,6 +41,15 @@ namespace CowboyCafe.DataTests
         }
 
         [Fact]
+        public void ChangingCheesePropertyShouldInvokePropertyChangedForCheese()
+        {
+            var chili = new CowpokeChili();
+            Assert.PropertyChanged(chili, "Cheese", () => {
+                chili.Cheese = false;
+            });
+        }
+
+        [Fact]
         public void HoldingSourCreamShouldAddSpecialInstruction()
         {
             var chili = new CowpokeChili();
@@ -47,6 +57,15 @@ namespace CowboyCafe.DataTests
             Assert.Collection(chili.SpecialInstructions, instruction =>
             {
                 Assert.Equal("hold sour cream", instruction);
+            });
+        }
+
+        [Fact]
+        public void ChangingSourCreamPropertyShouldInvokePropertyChangedForSourCream()
+        {
+            var chili = new CowpokeChili();
+            Assert.PropertyChanged(chili, "SourCream", () => {
+                chili.SourCream = false;
             });
         }
 
@@ -62,6 +81,15 @@ namespace CowboyCafe.DataTests
         }
 
         [Fact]
+        public void ChangingGreenOnionsropertyShouldInvokePropertyChangedForGreenOnions()
+        {
+            var chili = new CowpokeChili();
+            Assert.PropertyChanged(chili, "GreenOnions", () => {
+                chili.GreenOnions = false;
+            });
+        }
+
+        [Fact]
         public void HoldingTortillaStripsShouldAddSpecialInstruction()
         {
             var chili = new CowpokeChili();
@@ -69,6 +97,15 @@ namespace CowboyCafe.DataTests
             Assert.Collection(chili.SpecialInstructions, instruction =>
             {
                 Assert.Equal("hold tortilla strips", instruction);
+            });
+        }
+
+        [Fact]
+        public void ChangingTortillaStripsPropertyShouldInvokePropertyChangedForTortillaStrips()
+        {
+            var chili = new CowpokeChili();
+            Assert.PropertyChanged(chili, "TortillaStrips", () => {
+                chili.TortillaStrips = false;
             });
         }
 
@@ -92,6 +129,13 @@ namespace CowboyCafe.DataTests
             Assert.Contains("hold cheese", chili.SpecialInstructions);
             Assert.Contains("hold sour cream", chili.SpecialInstructions);
             Assert.Contains("hold green onions", chili.SpecialInstructions);
+        }
+
+        [Fact]
+        public void CowpokeChiliImplementsINotifyPropertyChanged()
+        {
+            var chili = new CowpokeChili();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(chili);
         }
     }
 }

@@ -24,7 +24,6 @@ namespace PointOfSale
             InitializeComponent();
         }
 
-        Border screen = new Border();
         public void SwapScreen(UIElement element)
         {
             Container.Child = element;
@@ -58,5 +57,7 @@ namespace PointOfSale
             this.DataContext = new Order();
             
         }
+
+        
     }
 }

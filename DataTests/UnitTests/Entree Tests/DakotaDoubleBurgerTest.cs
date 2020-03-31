@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -40,6 +41,15 @@ namespace CowboyCafe.DataTests
         }
 
         [Fact]
+        public void ChangingBunPropertyShouldInvokePropertyChangedForBun()
+        {
+            var dakota = new DakotaDoubleBurger();
+            Assert.PropertyChanged(dakota, "Bun", () => {
+                dakota.Bun = false;
+            });
+        }
+
+        [Fact]
         public void HoldingKetchupShouldAddInstruction()
         {
             var burger = new DakotaDoubleBurger();
@@ -47,6 +57,15 @@ namespace CowboyCafe.DataTests
             Assert.Collection(burger.SpecialInstructions, instruction =>
             {
                 Assert.Equal("hold ketchup", instruction);
+            });
+        }
+
+        [Fact]
+        public void ChangingKetchupPropertyShouldInvokePropertyChangedForKetchup()
+        {
+            var dakota = new DakotaDoubleBurger();
+            Assert.PropertyChanged(dakota, "Ketchup", () => {
+                dakota.Ketchup = false;
             });
         }
 
@@ -62,6 +81,15 @@ namespace CowboyCafe.DataTests
         }
 
         [Fact]
+        public void ChangingMustardPropertyShouldInvokePropertyChangedForMustard()
+        {
+            var dakota = new DakotaDoubleBurger();
+            Assert.PropertyChanged(dakota, "Mustard", () => {
+                dakota.Mustard = false;
+            });
+        }
+
+        [Fact]
         public void HoldingPickleShouldAddInstruction()
         {
             var burger = new DakotaDoubleBurger();
@@ -73,6 +101,15 @@ namespace CowboyCafe.DataTests
         }
 
         [Fact]
+        public void ChangingPicklePropertyShouldInvokePropertyChangedForPickle()
+        {
+            var dakota = new DakotaDoubleBurger();
+            Assert.PropertyChanged(dakota, "Pickle", () => {
+                dakota.Pickle = false;
+            });
+        }
+
+        [Fact]
         public void HoldingCheeseShouldAddInstruction()
         {
             var burger = new DakotaDoubleBurger();
@@ -80,6 +117,15 @@ namespace CowboyCafe.DataTests
             Assert.Collection(burger.SpecialInstructions, instruction =>
             {
                 Assert.Equal("hold cheese", instruction);
+            });
+        }
+
+        [Fact]
+        public void ChangingCheesePropertyShouldInvokePropertyChangedForCheese()
+        {
+            var dakota = new DakotaDoubleBurger();
+            Assert.PropertyChanged(dakota, "Cheese", () => {
+                dakota.Cheese = false;
             });
         }
 
@@ -106,6 +152,15 @@ namespace CowboyCafe.DataTests
         }
 
         [Fact]
+        public void ChangingLettucePropertyShouldInvokePropertyChangedForLettuce()
+        {
+            var dakota = new DakotaDoubleBurger();
+            Assert.PropertyChanged(dakota, "Lettuce", () => {
+                dakota.Lettuce = false;
+            });
+        }
+
+        [Fact]
         public void HoldingTomatoShouldAddInstruction()
         {
             var burger = new DakotaDoubleBurger();
@@ -113,6 +168,15 @@ namespace CowboyCafe.DataTests
             Assert.Collection(burger.SpecialInstructions, instruction =>
             {
                 Assert.Equal("hold tomato", instruction);
+            });
+        }
+
+        [Fact]
+        public void ChangingTomatoPropertyShouldInvokePropertyChangedForTomato()
+        {
+            var dakota = new DakotaDoubleBurger();
+            Assert.PropertyChanged(dakota, "Tomato", () => {
+                dakota.Tomato = false;
             });
         }
 
@@ -126,6 +190,7 @@ namespace CowboyCafe.DataTests
             Assert.Contains("hold mustard", burger.SpecialInstructions);
         }
 
+
         [Fact]
         public void HoldingBunCheeseAndPickleShouldAddThreeInstructions()
         {
@@ -136,6 +201,13 @@ namespace CowboyCafe.DataTests
             Assert.Contains("hold bun", burger.SpecialInstructions);
             Assert.Contains("hold cheese", burger.SpecialInstructions);
             Assert.Contains("hold pickle", burger.SpecialInstructions);
+        }
+
+        [Fact]
+        public void DakotaDoubleBurgerImplementsINotifyPropertyChanged()
+        {
+            var dakota = new DakotaDoubleBurger();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(dakota);
         }
     }
 }

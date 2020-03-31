@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Xunit;
 using CowboyCafe.Data;
+using System.ComponentModel;
 
 namespace CowboyCafe.DataTests
 {
@@ -40,6 +41,15 @@ namespace CowboyCafe.DataTests
         }
 
         [Fact]
+        public void ChangingBunPropertyShouldInvokePropertyChangedForBun()
+        {
+            var texas = new TexasTripleBurger();
+            Assert.PropertyChanged(texas, "Bun", () => {
+                texas.Bun = false;
+            });
+        }
+
+        [Fact]
         public void HoldingKetchupShouldAddInstruction()
         {
             var burger = new TexasTripleBurger();
@@ -47,6 +57,16 @@ namespace CowboyCafe.DataTests
             Assert.Collection(burger.SpecialInstructions, instruction =>
             {
                 Assert.Equal("hold ketchup", instruction);
+            });
+        }
+
+
+        [Fact]
+        public void ChangingKetchupPropertyShouldInvokePropertyChangedForKetchup()
+        {
+            var texas = new TexasTripleBurger();
+            Assert.PropertyChanged(texas, "Bun", () => {
+                texas.Bun = false;
             });
         }
 
@@ -62,6 +82,15 @@ namespace CowboyCafe.DataTests
         }
 
         [Fact]
+        public void ChangingMustardPropertyShouldInvokePropertyChangedForMustard()
+        {
+            var texas = new TexasTripleBurger();
+            Assert.PropertyChanged(texas, "Mustard", () => {
+                texas.Mustard = false;
+            });
+        }
+
+        [Fact]
         public void HoldingPickleShouldAddInstruction()
         {
             var burger = new TexasTripleBurger();
@@ -69,6 +98,16 @@ namespace CowboyCafe.DataTests
             Assert.Collection(burger.SpecialInstructions, instruction =>
             {
                 Assert.Equal("hold pickle", instruction);
+            });
+        }
+
+
+        [Fact]
+        public void ChangingPicklePropertyShouldInvokePropertyChangedForPickle()
+        {
+            var texas = new TexasTripleBurger();
+            Assert.PropertyChanged(texas, "Pickle", () => {
+                texas.Pickle = false;
             });
         }
 
@@ -83,6 +122,16 @@ namespace CowboyCafe.DataTests
             });
         }
 
+
+        [Fact]
+        public void ChangingCheesePropertyShouldInvokePropertyChangedForCheese()
+        {
+            var texas = new TexasTripleBurger();
+            Assert.PropertyChanged(texas, "Cheese", () => {
+                texas.Cheese = false;
+            });
+        }
+
         [Fact]
         public void HoldingMayoShouldAddInstruction()
         {
@@ -94,6 +143,16 @@ namespace CowboyCafe.DataTests
             });
         }
 
+
+        [Fact]
+        public void ChangingMayoPropertyShouldInvokePropertyChangedForMayo()
+        {
+            var texas = new TexasTripleBurger();
+            Assert.PropertyChanged(texas, "Mayo", () => {
+                texas.Mayo = false;
+            });
+        }
+
         [Fact]
         public void HoldingLettuceShouldAddInstruction()
         {
@@ -102,6 +161,15 @@ namespace CowboyCafe.DataTests
             Assert.Collection(burger.SpecialInstructions, instruction =>
             {
                 Assert.Equal("hold lettuce", instruction);
+            });
+        }
+
+        [Fact]
+        public void ChangingLettucePropertyShouldInvokePropertyChangedForLettuce()
+        {
+            var texas = new TexasTripleBurger();
+            Assert.PropertyChanged(texas, "Lettuce", () => {
+                texas.Lettuce = false;
             });
         }
 
@@ -128,6 +196,15 @@ namespace CowboyCafe.DataTests
         }
 
         [Fact]
+        public void ChangingBaconPropertyShouldInvokePropertyChangedForBacon()
+        {
+            var texas = new TexasTripleBurger();
+            Assert.PropertyChanged(texas, "Bacon", () => {
+                texas.Bacon = false;
+            });
+        }
+
+        [Fact]
         public void HoldingEggShouldAddInstruction()
         {
             var burger = new TexasTripleBurger();
@@ -135,6 +212,15 @@ namespace CowboyCafe.DataTests
             Assert.Collection(burger.SpecialInstructions, instruction =>
             {
                 Assert.Equal("hold egg", instruction);
+            });
+        }
+
+        [Fact]
+        public void ChangingEggPropertyShouldInvokePropertyChangedForEgg()
+        {
+            var texas = new TexasTripleBurger();
+            Assert.PropertyChanged(texas, "Egg", () => {
+                texas.Egg = false;
             });
         }
 
@@ -158,6 +244,14 @@ namespace CowboyCafe.DataTests
             Assert.Contains("hold bun", burger.SpecialInstructions);
             Assert.Contains("hold cheese", burger.SpecialInstructions);
             Assert.Contains("hold pickle", burger.SpecialInstructions);
+        }
+
+
+        [Fact]
+        public void TexasTripleBurgerImplementsINotifyPropertyChanged()
+        {
+            var texas = new TexasTripleBurger();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(texas);
         }
     }
 }

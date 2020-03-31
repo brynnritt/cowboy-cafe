@@ -20,12 +20,13 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizeEntree : UserControl
     {
-        public CustomizeEntree(string ButtonName, object Order)
+        public CustomizeEntree(string ButtonName)
         {
             InitializeComponent();
             EntreeSwitch(ButtonName);
         }
-        
+
+
         public void EntreeSwitch(string ButtonName)
         {
             switch (ButtonName)
@@ -62,6 +63,8 @@ namespace PointOfSale
             CCSourCreamCheck.Visibility = Visibility.Visible;
             CCTortillaStrips.Visibility = Visibility.Visible;
             CCTortillaStripsCheck.Visibility = Visibility.Visible;
+            
+            
         }
 
         public void DisplayAngryChicken()
