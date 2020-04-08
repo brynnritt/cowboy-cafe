@@ -10,4 +10,14 @@
     <ProjectReference Include="..\Data\Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="CashRegister">
+      <HintPath>..\..\mvvm-data-binding-brynnritt\MVVMDataBinding\CashRegister.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="TransactionControls\" />
+  </ItemGroup>
+
 </Project>

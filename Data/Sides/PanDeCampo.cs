@@ -43,17 +43,6 @@ namespace CowboyCafe.Data
             }
         }
 
-        /// <summary>
-        /// List of special instructions
-        /// </summary>
-        public List<string> SpecialInstructions
-        {
-            get
-            {
-                List<string> instructions = new List<string>();
-                return instructions;
-            }
-        }
 
         /// <summary>
         /// To string method
@@ -71,6 +60,11 @@ namespace CowboyCafe.Data
                     return "Large Pan de Campo";
 
             }
+        }
+
+        public override string Name()
+        {
+            return "Pan De Campo";
         }
     }
 }

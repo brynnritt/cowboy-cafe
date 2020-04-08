@@ -28,15 +28,35 @@ namespace CowboyCafe.Data
             }
         }
 
+        private bool bread = true;
         /// <summary>
         /// This bool represents whether or not the customer wants bread
         /// </summary>
-        public bool Bread { get; set; } = true;
+        public bool Bread
+        {
+            get { return bread; }
+            set
+            {
+                bread = value;
+                InvokePropertyChanged("Bread");
+                InvokePropertyChanged("SpecialInstructions");
+            }
+        }
 
+        private bool pickle = true;
         /// <summary>
         /// This bool represents whether or not the customer wants pickles
         /// </summary>
-        public bool Pickle { get; set; } = true;
+        public bool Pickle
+        {
+            get { return pickle; }
+            set
+            {
+                pickle = value;
+                InvokePropertyChanged("Pickle");
+                InvokePropertyChanged("SpecialInstructions");
+            }
+        }
 
         /// <summary>
         /// Returns the special instructions
@@ -50,7 +70,7 @@ namespace CowboyCafe.Data
                 if(!Bread) { instructions.Add("hold bread"); }
                 if (!Pickle) { instructions.Add("hold pickle"); }
                 return instructions;
-            }
+            }            
         }
 
         /// <summary>

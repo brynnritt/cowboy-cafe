@@ -23,13 +23,42 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
+        /// Private backing bool for bread
+        /// </summary>
+        private bool bread = true;
+
+        /// <summary>
         /// Boolean for bread
         /// </summary>
-        public bool Bread { get; set; } = true;
+        public bool Bread
+        {
+            get { return bread; }
+            set
+            {
+                bread = value;
+                InvokePropertyChanged("Bread");
+                InvokePropertyChanged("SpecialInstructions");
+            }
+        }
+
+        /// <summary>
+        /// Private backing bool for pickle
+        /// </summary>
+        private bool pickle = true;
+
         /// <summary>
         /// Boolean for pickles
         /// </summary>
-        public bool Pickle { get; set; } = true;
+        public bool Pickle
+        {
+            get { return pickle; }
+            set
+            {
+                pickle = value;
+                InvokePropertyChanged("Pickle");
+                InvokePropertyChanged("SpecialInstructions");
+            }
+        }
 
         /// <summary>
         /// Creates and returns list of special instructions

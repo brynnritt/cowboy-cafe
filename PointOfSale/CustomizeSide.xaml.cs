@@ -31,9 +31,12 @@ namespace PointOfSale
             InitializeComponent();
             side = (Side)ObjectName;
             order = (Order)Order;
+            AlterText(side);
         }
-
-               
+        private void AlterText(Side side)
+        {
+            CustomizeTextBlock.Text += side.Name();
+        }
         private void Size_Checked(object sender, RoutedEventArgs e)
         {
             if (sender is RadioButton button)

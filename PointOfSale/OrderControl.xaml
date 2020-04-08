@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="1000">
     <UserControl.Resources>
         <Style TargetType="Button">
             <Setter Property="Height" Value="50px"/>
@@ -16,23 +16,23 @@
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2.5*"/>
+            <ColumnDefinition Width="714.286"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="5*"/>
+            <RowDefinition Height="56.25"/>
+            <RowDefinition Height="393.75"/>
         </Grid.RowDefinitions>
         <local:OrderSummaryControl Grid.Column="1" Grid.RowSpan = "2"></local:OrderSummaryControl>
         <Border x:Name="Container" Grid.Column="0" Grid.Row="1">
-            <local:MenuItemSelectionControl Grid.Column="0" Grid.Row="1"></local:MenuItemSelectionControl>
+            <local:MenuItemSelectionControl Grid.Column="0" Grid.Row="1" Margin="10,0,61,0"></local:MenuItemSelectionControl>
         </Border>
         <StackPanel Orientation="Horizontal">
         <Button 
-            Click="ItemSelectionButton" FontSize="20" 
-            Content="Item Selection" HorizontalAlignment="Right" Height="75"/>
-        <Button Click="CompleteOrderButton" FontSize="20" Height="75">Complete Order</Button>
-            <Button Click="CancelOrderButton" FontSize="20" Height="75" >Cancel Order</Button>
+            Click="ItemSelectionButton" Width="238.1" FontSize="20" 
+            Content="Item Selection" HorizontalAlignment="Right" Height="56"/>
+            <Button Click="CompleteOrderButton" Width="238.1" FontSize="20" Height="56">Complete Order</Button>
+            <Button Click="CancelOrderButton" Width="238.1" FontSize="20" Height="56" >Cancel Order</Button>
         </StackPanel>
     </Grid>
 </UserControl>

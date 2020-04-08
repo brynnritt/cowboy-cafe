@@ -18,7 +18,12 @@ namespace CowboyCafe.Data
         public bool Cheese
         {
             get { return cheese; }
-            set { cheese = value; }
+            set 
+            { 
+                cheese = value;
+                InvokePropertyChanged("Cheese");
+                InvokePropertyChanged("SpecialInstructions");
+            }
         }
 
         private bool sourCream = true;
@@ -28,7 +33,12 @@ namespace CowboyCafe.Data
         public bool SourCream
         {
             get { return sourCream; }
-            set { sourCream = value; }
+            set
+            {
+                sourCream = value;
+                InvokePropertyChanged("SourCream");
+                InvokePropertyChanged("SpecialInstructions");
+            }
         }
 
         private bool greenOnions = true;
@@ -38,7 +48,12 @@ namespace CowboyCafe.Data
         public bool GreenOnions
         {
             get { return greenOnions; }
-            set { greenOnions = value; }
+            set
+            {
+                greenOnions = value;
+                InvokePropertyChanged("GreenOnions");
+                InvokePropertyChanged("SpecialInstructions");
+            }
         }
 
         /// <summary>
@@ -51,7 +66,12 @@ namespace CowboyCafe.Data
         public bool TortillaStrips
         {
             get { return tortillaStrips; }
-            set { tortillaStrips = value; }
+            set
+            {
+                tortillaStrips = value;
+                InvokePropertyChanged("TortillaStrips");
+                InvokePropertyChanged("SpecialInstructions");
+            }
         }
 
         /// <summary>

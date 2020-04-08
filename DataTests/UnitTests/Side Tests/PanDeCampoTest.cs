@@ -54,6 +54,7 @@ namespace CowboyCafe.DataTests
             Assert.Equal<uint>(calories, pdc.Calories);
         }
 
+        [Fact]
         public void PanDeCampoImplementsINotifyPropertyChanged()
         {
             var pan = new CowboyCoffee();

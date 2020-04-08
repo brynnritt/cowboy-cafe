@@ -28,6 +28,12 @@ namespace PointOfSale
         {
             Container.Child = element;
         }
+
+        public void OrderComplete()
+        {
+            this.DataContext = new Order();
+            Container.Child = new MenuItemSelectionControl();
+        }
         /// <summary>
         /// Button to select an item
         /// </summary>
@@ -54,10 +60,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         void CompleteOrderButton(object sender, RoutedEventArgs e)
         {
-            this.DataContext = new Order();
-            
+            object dc = DataContext;
+            TransactionControl tc = new TransactionControl(this);
+            tc.DataContext = this;
+            Container.Child = tc;
         }
-
-        
     }
 }

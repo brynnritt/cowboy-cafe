@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="PointOfSale.TransactionControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="8*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Order Information" FontSize="30"/>
+            <StackPanel Grid.Row="1">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Order #" FontSize="20"/>
+                    <TextBlock Name="OrderNumber" FontSize="20"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock  Text="Subtotal " FontSize="20"/>
+                    <TextBlock Name="Subtotal" FontSize="20"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock  Text="Tax" FontSize="20"/>
+                    <TextBlock Text="$" Name="Tax" FontSize="20"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock  Text="Total" FontSize="20"/>
+                    <TextBlock Text="$" Name="Total" FontSize="20"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="2">
+                <Button Width="266.7" FontSize="20" Content="Credit" Click="OnCredit_Click"/>
+                <Button Width="266.7" FontSize="20" Content="Cash" Click="OnCash_Click"/>
+                <Button Width="266.7" FontSize="20" Content="Cancel Transaction" Click="OnCancelTransaction_Click"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

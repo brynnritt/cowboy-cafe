@@ -39,5 +39,11 @@ namespace CowboyCafe.Data
             return base.ToString();
         }
 
+        protected void InvokePropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
+
     }
 }

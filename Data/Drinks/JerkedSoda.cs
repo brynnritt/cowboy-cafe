@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
@@ -44,10 +45,19 @@ namespace CowboyCafe.Data
             }
         }
 
+        private SodaFlavor sodaFlavor;
         /// <summary>
         /// The flavor of the soda
         /// </summary>
-        public SodaFlavor Flavor { get; set; } 
+        public SodaFlavor Flavor
+        {
+            get { return sodaFlavor; }
+            set
+            {
+                sodaFlavor = value;
+                InvokePropertyChanged("SodaFlavor");
+            }
+        }
 
         /// <summary>
         /// Gets the special instructions
@@ -100,6 +110,11 @@ namespace CowboyCafe.Data
                     break;
             }
             return s;
+        }
+
+        public override string DrinkName()
+        {
+            return "Jerked Soda";
         }
     }
 }

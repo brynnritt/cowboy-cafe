@@ -54,6 +54,7 @@ namespace CowboyCafe.DataTests
             Assert.Equal<uint>(calories, beans.Calories);
         }
 
+        [Fact]
         public void BakedBeansImplementsINotifyPropertyChanged()
         {
             var beans = new BakedBeans();

@@ -54,6 +54,7 @@ namespace CowboyCafe.DataTests
             Assert.Equal<uint>(calories, cd.Calories);
         }
 
+        [Fact]
         public void CornDodgersImplementsINotifyPropertyChanged()
         {
             var corn = new CornDodgers();

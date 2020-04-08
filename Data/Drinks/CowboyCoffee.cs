@@ -43,20 +43,50 @@ namespace CowboyCafe.Data
             }
         }
 
+        private bool roomForCream = false;
         /// <summary>
         /// Bool for room for cream
         /// </summary>
-        public bool RoomForCream { get; set; } = false;
+        public bool RoomForCream
+        {
+            get { return roomForCream; }
+            set
+            {
+                roomForCream = value;
+                InvokePropertyChanged("RoomForCream");
+                InvokePropertyChanged("SpecialInstructions");
+            }
+        }
 
+        private bool ice = false;
         /// <summary>
         /// Bool for Ice set false by default
         /// </summary>
-        public new bool Ice { get; set; } = false;
+        public new bool Ice
+        {
+            get { return ice; }
+            set
+            {
+                ice = value;
+                InvokePropertyChanged("Ice");
+                InvokePropertyChanged("SpecialInstructions");
+            }
+        }
 
+        private bool decaf = false;
         /// <summary>
         /// Bool for room for decaf
         /// </summary>
-        public bool Decaf { get; set; } = false;
+        public bool Decaf
+        {
+            get { return decaf; }
+            set
+            {
+                decaf = value;
+                InvokePropertyChanged("Decaf");
+                InvokePropertyChanged("SpecialInstructions");
+            }
+        }
 
         /// <summary>
         /// Gets special instructions
@@ -90,6 +120,11 @@ namespace CowboyCafe.Data
                     if (Decaf) return "Large Decaf Cowboy Coffee";
                     return "Large Cowboy Coffee";
             }
+        }
+
+        public override string DrinkName()
+        {
+            return "Cowboy Coffee";
         }
     }
 }

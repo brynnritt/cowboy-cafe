@@ -13,10 +13,14 @@ namespace CowboyCafe.Data
 {
     public class Order : INotifyPropertyChanged
     {
+        public Order()
+        {
+            LastOrderNumber++;
+        }
         /// <summary>
         /// Keeps track of last order number
         /// </summary>
-        private static uint LastOrderNumber = 1;
+        private static uint LastOrderNumber = 0;
         /// <summary>
         /// List of items in order
         /// </summary>
@@ -54,19 +58,19 @@ namespace CowboyCafe.Data
             }
         }
 
+
         /// <summary>
-        /// The order number
+        /// The next order number
         /// </summary>
         public uint OrderNumber
         {
             get
             {
-                return LastOrderNumber++;
+                return LastOrderNumber;
             }
         }
 
-
-
+        
         /// <summary>
         /// Adds an item to the order by adding it to the list of items ordered
         /// </summary>

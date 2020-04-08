@@ -46,18 +46,6 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// List of special instructions
-        /// </summary>
-        public List<string> SpecialInstructions
-        {
-            get
-            {
-                List<string> instructions = new List<string>();
-                return instructions;
-            }
-        }
-
-        /// <summary>
         /// To string method
         /// </summary>
         /// <returns>Side as a string</returns>
@@ -71,8 +59,12 @@ namespace CowboyCafe.Data
                     return "Medium Chili Cheese Fries";
                 default:
                     return "Large Chili Cheese Fries";
-
             }
+        }
+
+        public override string Name()
+        {
+            return "Chili Cheese Fries";
         }
     }
 }

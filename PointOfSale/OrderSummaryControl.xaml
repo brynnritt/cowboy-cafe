@@ -27,21 +27,23 @@
                 <TextBlock Grid.Column= "1" Text="{Binding Path=OrderNumber}"></TextBlock>
                 <TextBlock Grid.Column="0">OrderNumber</TextBlock>
             </Grid>
-            <ListBox ItemsSource="{Binding Items}" SelectionChanged="ListBox_SelectionChanged">
+            <ListBox ItemsSource="{Binding Path=Items}" SelectionChanged="ListBox_SelectionChanged">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="4*"/>
                                 <ColumnDefinition/>
-                                <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock x:Name="Item" FontSize="17" Text="{Binding}"/>
-                            <TextBlock FontSize="17" Grid.Column="1" Text="{Binding Price, StringFormat=c}"/>
-                            <Button 
-                                Grid.Column="2" HorizontalAlignment="Right" 
-                                HorizontalContentAlignment="Center" Height="20" 
-                                Width="20" Content="X" Click="DeleteItem_Click" Tag="{Binding}"/>
+                            <TextBlock FontSize="15" Text="{Binding}"/>
+                            <TextBlock FontSize="15" Grid.Column="1" Text="{Binding Price, StringFormat=c}"/>
+                            <Button Grid.Column="1" HorizontalAlignment="Right" HorizontalContentAlignment="Center" 
+                                    Height="20" Width="20" Content="X" Click="DeleteItem_Click"/>
+                            <ListBox ItemsSource="{Binding Path=SpecialInstructions}" Grid.Row="1"/>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

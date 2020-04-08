@@ -30,6 +30,12 @@ namespace PointOfSale
             DrinkSwitch(buttonName);
             drink = (Drink)ObjectName;
             order = (Order)Order;
+            AlterText(drink);
+        }
+
+        public void AlterText(Drink drink)
+        {
+            CustomizeDrinkLabel.Text += drink.DrinkName();
         }
 
         public void DrinkSwitch(string buttonName)
@@ -53,36 +59,41 @@ namespace PointOfSale
 
         public void DisplayCowboyCoffee()
         {
-            CowboyCoffee.Visibility = Visibility.Visible;
             CC_Decaf.Visibility = Visibility.Visible;
             CC_DecafCheck.Visibility = Visibility.Visible;
             CC_RoomforCream.Visibility = Visibility.Visible;
             CC_RoomforCreamCheck.Visibility = Visibility.Visible;
-            CC_Ice.Visibility = Visibility.Visible;
-            CC_IceCheck.Visibility = Visibility.Visible;
+            Ice.Visibility = Visibility.Visible;
+            Ice_Check.Visibility = Visibility.Visible;
         }
 
         public void DisplayTexasTea()
         {
-            TexasTea.Visibility = Visibility.Visible;
             TT_Sweet.Visibility = Visibility.Visible;
             TT_SweetCheck.Visibility = Visibility.Visible;
-            TT_Ice.Visibility = Visibility.Visible;
-            TT_IceCheck.Visibility = Visibility.Visible;
-        }
-
-        public void DisplayWater()
-        {
-            Water.Visibility = Visibility.Visible;
+            Ice.Visibility = Visibility.Visible;
+            Ice_Check.Visibility = Visibility.Visible;
             Lemon.Visibility = Visibility.Visible;
             Lemon_Check.Visibility = Visibility.Visible;
         }
 
+        public void DisplayWater()
+        {
+            Lemon.Visibility = Visibility.Visible;
+            Lemon_Check.Visibility = Visibility.Visible;
+            Ice.Visibility = Visibility.Visible;
+            Ice_Check.Visibility = Visibility.Visible;
+        }
+
         public void DisplayJerkedSoda()
         {
-            JerkedSoda.Visibility = Visibility.Visible;
-            JS_Ice.Visibility = Visibility.Visible;
-            JS_IceCheck.Visibility = Visibility.Visible;
+            Ice.Visibility = Visibility.Visible;
+            Ice_Check.Visibility = Visibility.Visible;
+            BirchBeer.Visibility = Visibility.Visible;
+            CreamSoda.Visibility = Visibility.Visible;
+            OrangeSoda.Visibility = Visibility.Visible;
+            RootBeer.Visibility = Visibility.Visible;
+            Sarsparilla.Visibility = Visibility.Visible;
         }
 
         private void Size_Checked(object sender, RoutedEventArgs e)
@@ -125,7 +136,7 @@ namespace PointOfSale
                     case "Sarsparilla":
                         js.Flavor = CowboyCafe.Data.SodaFlavor.Sarsparilla;
                         break;
-                    case "RootBeeer":
+                    case "RootBeer":
                         js.Flavor = CowboyCafe.Data.SodaFlavor.RootBeer;
                         break;
                 }

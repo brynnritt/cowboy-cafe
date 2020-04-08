@@ -29,10 +29,20 @@ namespace CowboyCafe.Data
             
         }
 
+        private bool lemon = false;
         /// <summary>
         /// Bool for room for lemon
         /// </summary>
-        public bool Lemon { get; set; } = false;
+        public bool Lemon
+        {
+            get { return lemon; }
+            set
+            {
+                lemon = value;
+                InvokePropertyChanged("Lemon");
+                InvokePropertyChanged("SpecialInstructions");
+            }
+        }
 
         /// <summary>
         /// Gets special instructions
@@ -64,6 +74,11 @@ namespace CowboyCafe.Data
                     return "Large Water";
 
             }
+        }
+
+        public override string DrinkName()
+        {
+            return "Water";
         }
     }
 }

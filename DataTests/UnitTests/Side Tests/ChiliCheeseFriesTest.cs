@@ -54,6 +54,7 @@ namespace CowboyCafe.DataTests
             Assert.Equal<uint>(calories, fries.Calories);
         }
 
+        [Fact]
         public void ChiliCheeseFriesImplementsINotifyPropertyChanged()
         {
             var fries = new CowboyCoffee();

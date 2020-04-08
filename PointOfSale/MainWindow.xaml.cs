@@ -30,5 +30,10 @@ namespace PointOfSale
             var order = new Order();
             this.DataContext = order;
         }
+
+        public object GetDataContext()
+        {
+            return DataContext;
+        }
     }
 }
