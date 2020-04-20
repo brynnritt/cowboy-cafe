@@ -1,0 +1,73 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+@using CowboyCafe.Data; 
+    <div class="text-center">
+        <h1 class="Cowboy Cafe">Welcome</h1>
+
+        <p>
+            We at Cowboy Cafe are proud to bring you authentic trail meals from the American West.
+            Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas.
+            Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger!
+            You’ve had a hard ride - so take it easy with us.
+        </p>
+       
+        <h2>Entrees</h2>
+        <ul>
+
+            @foreach (IOrderItem item in Menu.Entrees())
+            {
+                <li>
+                    <div class="menu-item">
+                        @item.ToString()
+                        <br />
+                        Price $@item.Price.ToString()
+                        Calories @item.Calories.ToString()
+                    </div>
+                </li>
+            }
+        </ul>
+        <h2>Sides</h2>
+        <ul>
+            @foreach (IOrderItem item in Menu.Sides())
+            {
+                <li>
+                    <div class="menu-item">
+                        <div class="item-type">
+                            @item.ToString()
+                        </div>
+                        <br /> Price <br/>
+                        Small: $@Menu.GetPrice(item, Size.Small)
+                        Medium: $@Menu.GetPrice(item, Size.Medium)
+                        Large: $@Menu.GetPrice(item, Size.Large)
+                        <br />Calories <br />
+                        Small: @Menu.GetCalories(item, Size.Small)
+                        Medium: @Menu.GetCalories(item, Size.Medium)
+                        Large: @Menu.GetCalories(item, Size.Large)
+                    </div>
+                </li>
+            }
+        </ul>
+        <h2>Drink</h2>
+        <ul>
+            @foreach (IOrderItem item in Menu.Drinks())
+            {
+                <li>
+                    <div class="menu-item">
+                        @item.ToString()
+                        <br /> Price <br />
+                        Small: $@Menu.GetPrice(item, Size.Small)
+                        Medium: $@Menu.GetPrice(item, Size.Medium)
+                        Large: $@Menu.GetPrice(item, Size.Large)
+                        <br />Calories <br />
+                        Small: @Menu.GetCalories(item, Size.Small)
+                        Medium: @Menu.GetCalories(item, Size.Medium)
+                        Large: @Menu.GetCalories(item, Size.Large)
+                    </div>
+                </li>
+            }
+        </ul>
+
+    </div>

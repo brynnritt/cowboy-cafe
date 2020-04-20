@@ -14,6 +14,8 @@ namespace CowboyCafe.Data
         /// </summary>
         double Price { get; }
 
+        uint Calories { get; }
+
         /// <summary>
         /// List of special intsructions
         /// </summary>
