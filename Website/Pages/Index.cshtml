@@ -4,7 +4,7 @@
     ViewData["Title"] = "Home page";
 }
 @using CowboyCafe.Data; 
-    <div class="text-center">
+    <div class="title">
         <h1 class="Cowboy Cafe">Welcome</h1>
 
         <p>
@@ -13,61 +13,105 @@
             Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger!
             You’ve had a hard ride - so take it easy with us.
         </p>
-       
-        <h2>Entrees</h2>
-        <ul>
-
-            @foreach (IOrderItem item in Menu.Entrees())
-            {
-                <li>
-                    <div class="menu-item">
-                        @item.ToString()
-                        <br />
-                        Price $@item.Price.ToString()
-                        Calories @item.Calories.ToString()
-                    </div>
-                </li>
-            }
-        </ul>
-        <h2>Sides</h2>
-        <ul>
-            @foreach (IOrderItem item in Menu.Sides())
-            {
-                <li>
-                    <div class="menu-item">
-                        <div class="item-type">
-                            @item.ToString()
-                        </div>
-                        <br /> Price <br/>
-                        Small: $@Menu.GetPrice(item, Size.Small)
-                        Medium: $@Menu.GetPrice(item, Size.Medium)
-                        Large: $@Menu.GetPrice(item, Size.Large)
-                        <br />Calories <br />
-                        Small: @Menu.GetCalories(item, Size.Small)
-                        Medium: @Menu.GetCalories(item, Size.Medium)
-                        Large: @Menu.GetCalories(item, Size.Large)
-                    </div>
-                </li>
-            }
-        </ul>
-        <h2>Drink</h2>
-        <ul>
-            @foreach (IOrderItem item in Menu.Drinks())
-            {
-                <li>
-                    <div class="menu-item">
-                        @item.ToString()
-                        <br /> Price <br />
-                        Small: $@Menu.GetPrice(item, Size.Small)
-                        Medium: $@Menu.GetPrice(item, Size.Medium)
-                        Large: $@Menu.GetPrice(item, Size.Large)
-                        <br />Calories <br />
-                        Small: @Menu.GetCalories(item, Size.Small)
-                        Medium: @Menu.GetCalories(item, Size.Medium)
-                        Large: @Menu.GetCalories(item, Size.Large)
-                    </div>
-                </li>
-            }
-        </ul>
-
     </div>
+    <form id="search-menu">
+        <div class="search-menu">
+            <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
+            <input type="submit" value="Search" />
+        </div>
+        <div id="filters">
+            @*filter by catagory*@
+            <h4>Catagory</h4>
+            <label>
+                @*Entree Checkbox*@
+                @*TODO: make sure that the value property is what is held in Model.Catagory*@
+                <input type="checkbox" name="Catagories" id="entree" value="entree" checked="@Model.Category.Equals("entree")"/>Entree
+            </label>
+            <label>
+                @*Side Checkbox*@
+                <input type="checkbox" name="Catagories" id="side" value="side" checked="@Model.Category.Equals("side")"/>Side
+            </label>
+            <label>
+                @*Drink Checkbox*@
+                <input type="checkbox" name="Catagories" id="drink" value="drink" checked="@Model.Category.Equals("drink")"/>Drink
+            </label>
+            @*filter by calories*@
+            <h4>Calories</h4>
+            <div>
+                Between
+                <input name="CaloriesMin" type="number" min="0" max="1000" step="1" placeholder="min" value="@Model.CaloriesMin"/>
+                and
+                <input name="CaloriesMax" type="number" min="0" max="1000" step="1" placeholder="max" value="@Model.CaloriesMax"/>
+            </div>
+            @*filter by price*@
+            <h4>Price</h4>
+            <div>
+                Between
+                $<input name="PriceMin" type="number" min="0" max="20" step="1" placeholder="min" value="@Model.PriceMin"/>
+                and
+                $<input name="PriceMax" type="number" min="0" max="20" step="1" placeholder="max" value="@Model.PriceMax"/>
+            </div>
+            <div class="text-center">
+                <h2>Entrees</h2>
+                <ul class="entrees-list">
+                    @foreach (IOrderItem item in @Model.FilteredMenu)
+                    {
+
+                        @if (item is Entree)
+                        {
+
+                            <li>
+                                <div class="menu-item">
+                                    <br/>
+                                    <h5>@item.ToString()</h5>
+                                    Price $@item.Price.ToString() | Calories @item.Calories.ToString()
+                                    <br />
+                                </div>
+                            </li>
+                        }
+                    }
+                </ul>
+                <h2>Sides</h2>
+                <ul class="sides-list">
+                    @foreach (IOrderItem item in @Model.FilteredMenu)
+                    {
+                        @if (item is Side)
+                        {
+                            <li>
+                                <div class="menu-item">
+                                    <br />
+                                    <h5>@item.Name()</h5>
+                                    Small: Price $@Menu.GetPrice(item, Size.Small) | Calories @Menu.GetCalories(item, Size.Small)
+                                    <br />
+                                    Medium: Price $@Menu.GetPrice(item, Size.Medium) | Calories @Menu.GetCalories(item, Size.Medium)
+                                    <br />
+                                    Large: Price $@Menu.GetPrice(item, Size.Large) | Calories @Menu.GetCalories(item, Size.Large)
+                                    <br />
+                                </div>
+                            </li>
+                        }
+                    }
+                    </ul>
+                <h2>Drinks</h2>
+                <ul class="drinks-list">
+                    @foreach (IOrderItem item in @Model.FilteredMenu)
+                    {
+                        @if (item is Drink)
+                        {
+                            <li>
+                                <div class="menu-item">
+                                    <br/>
+                                    <h5>@item.Name()</h5>
+                                    Small: Price $@Menu.GetPrice(item, Size.Small) | Calories @Menu.GetCalories(item, Size.Small)
+                                    <br/>
+                                    Medium: Price $@Menu.GetPrice(item, Size.Medium) | Calories @Menu.GetCalories(item, Size.Medium)
+                                    <br/>
+                                    Large: Price $@Menu.GetPrice(item, Size.Large) | Calories @Menu.GetCalories(item, Size.Large)
+                                </div>
+                            </li>
+                        }
+                    }
+                    </ul>
+                </div>
+            </div>
+    </form>

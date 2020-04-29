@@ -128,5 +128,10 @@ namespace CowboyCafe.Data
         {
             return "Texas Tea";
         }
+
+        public override string Name()
+        {
+            return "Texas Tea";
+        }
     }
 }

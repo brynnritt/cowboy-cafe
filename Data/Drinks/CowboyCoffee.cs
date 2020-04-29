@@ -126,5 +126,10 @@ namespace CowboyCafe.Data
         {
             return "Cowboy Coffee";
         }
+        public override string Name()
+        {
+            return "Cowboy Coffee";
+        }
     }
+
 }

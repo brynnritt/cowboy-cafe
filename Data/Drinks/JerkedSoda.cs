@@ -116,5 +116,9 @@ namespace CowboyCafe.Data
         {
             return "Jerked Soda";
         }
+        public override string Name()
+        {
+            return "Jerked Soda";
+        }
     }
 }

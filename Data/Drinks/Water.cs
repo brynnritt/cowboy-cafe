@@ -80,5 +80,9 @@ namespace CowboyCafe.Data
         {
             return "Water";
         }
+        public override string Name()
+        {
+            return "Water";
+        }
     }
 }

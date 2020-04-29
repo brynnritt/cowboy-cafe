@@ -67,5 +67,10 @@ namespace CowboyCafe.Data
         {
             return "Drink";
         }
+
+        public virtual string Name()
+        {
+            return null;
+        }
     }
 }

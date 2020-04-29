@@ -44,6 +44,9 @@ namespace CowboyCafe.Data
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
-
+        public string Name()
+        {
+            return null;
+        }
     }
 }

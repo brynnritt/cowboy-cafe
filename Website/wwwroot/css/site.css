@@ -74,3 +74,8 @@ menu-item .item-type {
     font-size: .1rem;
     color: blueviolet
 }
+
+ul.entrees-list, ul.sides-list, ul.drinks-list{
+    list-style-type: none;
+    
+}
