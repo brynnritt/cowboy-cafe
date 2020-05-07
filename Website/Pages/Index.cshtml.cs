@@ -50,21 +50,47 @@ namespace Website.Pages
         public void OnGet(string SearchTerms, int? CaloriesMin, int? CaloriesMax, double? PriceMin, double? PriceMax)
         {
             this.SearchTerms = SearchTerms;
-            FilteredMenu = Menu.Search(FilteredMenu, SearchTerms);
+            FilteredMenu = Menu.All;
+
+            if (SearchTerms != null)
+            {
+                FilteredMenu = FilteredMenu.Where(item => item.ToString().Contains(SearchTerms));
+            }
 
             if(Request.Query["Catagories"].Count != 0)
             {
                 Category = Request.Query["Catagories"];
-                FilteredMenu = Menu.FilterByCategory(FilteredMenu, Category);
+                //FilteredMenu = Menu.FilterByCategory(FilteredMenu, Category);
+                if (!Category.Contains("entree")) FilteredMenu = FilteredMenu.Where(item => !(item is Entree));
+                if (!Category.Contains("side")) FilteredMenu = FilteredMenu.Where(item => !(item is Side));
+                if (!Category.Contains("drink")) FilteredMenu = FilteredMenu.Where(item => !(item is Drink));
             }
 
+            //FilteredMenu = Menu.FilterByCalories(FilteredMenu, CaloriesMin, CaloriesMax);
             this.CaloriesMin = CaloriesMin;
             this.CaloriesMax = CaloriesMax;
-            FilteredMenu = Menu.FilterByCalories(FilteredMenu, CaloriesMin, CaloriesMax);
+            if (CaloriesMin != null)
+            {
+                FilteredMenu = FilteredMenu.Where(item => item.Calories >= CaloriesMin);
+            }
+            
+            if (CaloriesMax != null)
+            {
+                FilteredMenu = FilteredMenu.Where(item => item.Calories <= CaloriesMax);
+            }
 
+            //FilteredMenu = Menu.FilterByPrice(FilteredMenu, PriceMin, PriceMax);
             this.PriceMin = PriceMin;
             this.PriceMax = PriceMax;
-            FilteredMenu = Menu.FilterByPrice(FilteredMenu, PriceMin, PriceMax);
+            if (PriceMin != null)
+            {
+                FilteredMenu = FilteredMenu.Where(item => item.Price >= PriceMin);
+            }
+
+            if (PriceMax != null)
+            {
+                FilteredMenu = FilteredMenu.Where(item => item.Price <= PriceMax);
+            }
         }
     }
 }

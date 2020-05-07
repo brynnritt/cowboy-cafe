@@ -25,15 +25,15 @@
             <label>
                 @*Entree Checkbox*@
                 @*TODO: make sure that the value property is what is held in Model.Catagory*@
-                <input type="checkbox" name="Catagories" id="entree" value="entree" checked="@Model.Category.Equals("entree")"/>Entree
+                <input type="checkbox" name="Catagories" id="entree" value="entree" checked="@Model.Category.Contains("entree")"/>Entree
             </label>
             <label>
                 @*Side Checkbox*@
-                <input type="checkbox" name="Catagories" id="side" value="side" checked="@Model.Category.Equals("side")"/>Side
+                <input type="checkbox" name="Catagories" id="side" value="side" checked="@Model.Category.Contains("side")"/>Side
             </label>
             <label>
                 @*Drink Checkbox*@
-                <input type="checkbox" name="Catagories" id="drink" value="drink" checked="@Model.Category.Equals("drink")"/>Drink
+                <input type="checkbox" name="Catagories" id="drink" value="drink" checked="@Model.Category.Contains("drink")"/>Drink
             </label>
             @*filter by calories*@
             <h4>Calories</h4>
@@ -51,7 +51,9 @@
                 and
                 $<input name="PriceMax" type="number" min="0" max="20" step="1" placeholder="max" value="@Model.PriceMax"/>
             </div>
-            <div class="text-center">
+        </div>
+        <div class="float-columns">
+            <div class="column">
                 <h2>Entrees</h2>
                 <ul class="entrees-list">
                     @foreach (IOrderItem item in @Model.FilteredMenu)
@@ -62,7 +64,7 @@
 
                             <li>
                                 <div class="menu-item">
-                                    <br/>
+                                    <br />
                                     <h5>@item.ToString()</h5>
                                     Price $@item.Price.ToString() | Calories @item.Calories.ToString()
                                     <br />
@@ -71,6 +73,8 @@
                         }
                     }
                 </ul>
+            </div>
+            <div class="column">
                 <h2>Sides</h2>
                 <ul class="sides-list">
                     @foreach (IOrderItem item in @Model.FilteredMenu)
@@ -91,7 +95,9 @@
                             </li>
                         }
                     }
-                    </ul>
+                </ul>
+            </div>
+            <div class="column">
                 <h2>Drinks</h2>
                 <ul class="drinks-list">
                     @foreach (IOrderItem item in @Model.FilteredMenu)
@@ -100,18 +106,24 @@
                         {
                             <li>
                                 <div class="menu-item">
-                                    <br/>
+                                    <br />
                                     <h5>@item.Name()</h5>
                                     Small: Price $@Menu.GetPrice(item, Size.Small) | Calories @Menu.GetCalories(item, Size.Small)
-                                    <br/>
+                                    <br />
                                     Medium: Price $@Menu.GetPrice(item, Size.Medium) | Calories @Menu.GetCalories(item, Size.Medium)
-                                    <br/>
+                                    <br />
                                     Large: Price $@Menu.GetPrice(item, Size.Large) | Calories @Menu.GetCalories(item, Size.Large)
+                                    @if (item is JerkedSoda)
+                                    {
+                                        <div>
+                                            Flavors: Cream Soda, Orange Soda, Sarsparilla, Birch Beer, Root Beer
+                                        </div>
+                                    }
                                 </div>
                             </li>
                         }
                     }
-                    </ul>
-                </div>
+                </ul>
             </div>
+        </div>
     </form>
