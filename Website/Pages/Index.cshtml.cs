@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Brynn Rittenhouse
+ * Index.cshtml.cs
+ * Model for website
+ * */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

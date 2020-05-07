@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Brynn Rittenhouse
+ * Menu.cs
+ * This class enables menu to be displayed on website
+ * */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
